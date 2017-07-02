@@ -1,0 +1,13 @@
+name: Pro-Login
+main: cn.szzxol.pro.login.Login
+version: 1.0.0
+author: I_promise
+commands:
+   login:
+      description: Pro-Login插件命令
+      usage: /login
+      aliases: [l]
+   register:
+      description: Pro-Login插件命令
+      usage: /register
+      aliases: [reg]
