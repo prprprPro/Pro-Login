@@ -9,6 +9,8 @@ import static cn.szzxol.pro.login.utils.Utils.isAllow;
 import static cn.szzxol.pro.login.utils.Utils.isLogin;
 import java.io.File;
 import java.io.IOException;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -69,6 +71,8 @@ public class PlayListener implements Listener {
         YamlConfiguration config = getConfiguration("/players/" + Name);
         config.set("isLogin", false);
         saveConfiguration(config, "/players/" + Name);
+        Bukkit.broadcastMessage((new StringBuilder()).append(ChatColor.AQUA).append(ChatColor.BOLD).append("【信号站】").append(ChatColor.WHITE).append("服务器捕捉到新信号...正在接入...").toString());
+        event.setJoinMessage((new StringBuilder()).append(ChatColor.AQUA).append(ChatColor.BOLD).append("【信号站】").append(ChatColor.GOLD).append(Name).append(ChatColor.WHITE).append(" 已接入...").toString());
     }
 
     @EventHandler
